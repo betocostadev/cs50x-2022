@@ -4,19 +4,17 @@
 
 int main(void)
 {
-    float change_owned;
+    float change_owed;
     int coins = 0;
 
     // Get change owned
     do
     {
-        change_owned = get_float("Change owned: ");
-    }
-    while (change_owned < 0.00999);
+        change_owed = get_float("Change owed: ");
+    } while (change_owed < 0.00999);
 
     // Convert cents to int
-    int cents = round(change_owned * 100);
-
+    int cents = round(change_owed * 100);
 
     // Select the correct coins to give to the user while there is still change to be given
     while (cents > 0)
@@ -25,13 +23,11 @@ int main(void)
         {
             cents -= 25;
             coins++;
-
         }
         else if (cents <= 24 && cents >= 10)
         {
             cents -= 10;
             coins++;
-
         }
         else if (cents <= 9 && cents >= 5)
         {
@@ -45,5 +41,4 @@ int main(void)
         }
     }
     printf("%i\n", coins);
-
 }
