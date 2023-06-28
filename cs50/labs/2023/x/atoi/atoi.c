@@ -33,16 +33,14 @@ int convert(string input)
   {
     return 0;
   }
-  else
-  {
-    // Gets the integer of the last digit
-    int i = input[count - 1] - '0';
-    printf("i is: %i\n", i);
 
-    // Remove last digit
-    input[count - 1] = '\0';
+  // Get the INT of the last CHAR
+  int i = input[count - 1] - '0';
+  // printf("i is: %i\n", i);
 
-    // Returns converted string as digit
-    return i + 10 * convert(input);
-  }
+  // Remove the last char
+  input[count - 1] = '\0';
+
+  // Return the converted string as int
+  return i + 10 * convert(input);
 }
